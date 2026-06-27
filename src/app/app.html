@@ -29,18 +29,6 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">{{ config().eyebrow }}</p>
-      <h1>{{ config().headline }}</h1>
-      <p class="subtitle">{{ config().subtitle }}</p>
-
-      <div class="hero-actions">
-        <button class="primary-button" type="button" (click)="toggleMusic(soundtrack)">
-          <span class="play-icon">{{ isMusicPlaying() ? 'II' : '▶' }}</span>
-          <span>{{ isMusicPlaying() ? 'Tạm dừng nhạc' : 'Bật nhạc' }}</span>
-        </button>
-        <span class="date-pill">{{ config().dateLabel }}</span>
-      </div>
-
       <audio
         #soundtrack
         [src]="config().music.src"
@@ -48,6 +36,21 @@
         loop
         (ended)="onMusicEnded()"
       ></audio>
+
+      <div class="top-actions">
+        <button class="music-button" type="button" (click)="toggleMusic(soundtrack)">
+          <span class="play-icon">{{ isMusicPlaying() ? 'II' : '▶' }}</span>
+          <span>{{ isMusicPlaying() ? 'Tạm dừng' : 'Bật nhạc' }}</span>
+        </button>
+      </div>
+
+      <p class="eyebrow">{{ config().eyebrow }}</p>
+      <h1>{{ config().headline }}</h1>
+      <p class="subtitle">{{ config().subtitle }}</p>
+
+      <div class="hero-actions">
+        <span class="date-pill">{{ config().dateLabel }}</span>
+      </div>
     </div>
 
     <div class="portrait-stage" aria-label="Bộ ảnh kỷ niệm">
