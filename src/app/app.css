@@ -901,15 +901,15 @@ h1 {
   }
 
   .stream-track {
-    animation-duration: 140s;
+    animation-duration: 240s;
   }
 
   .stream-lane.reverse .stream-track {
-    animation-duration: 160s;
+    animation-duration: 270s;
   }
 
   .stream-lane.slow .stream-track {
-    animation-duration: 180s;
+    animation-duration: 310s;
   }
 
   .wish-wall {
