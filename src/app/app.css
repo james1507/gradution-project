@@ -1,0 +1,795 @@
+:host {
+  --bg: #170f2f;
+  --bg-deep: #090718;
+  --ink: #fff9f1;
+  --muted: #f9d9cb;
+  --rose: #f43f5e;
+  --coral: #fb7185;
+  --gold: #facc15;
+  --mint: #34d399;
+  --sky: #38bdf8;
+  --violet: #a78bfa;
+  --panel: rgba(255, 255, 255, 0.12);
+  --panel-strong: rgba(255, 255, 255, 0.2);
+  --stroke: rgba(255, 255, 255, 0.28);
+  color: var(--ink);
+  display: block;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.celebration-shell {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(244, 63, 94, 0.42), transparent 28rem),
+    radial-gradient(circle at 80% 8%, rgba(56, 189, 248, 0.28), transparent 24rem),
+    linear-gradient(135deg, var(--bg-deep), var(--bg) 48%, #2b143f);
+  min-height: 100dvh;
+  overflow: hidden;
+  position: relative;
+}
+
+.aurora,
+.star-field,
+.confetti-field,
+.fireworks,
+.floating-wishes {
+  pointer-events: none;
+}
+
+.aurora {
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.75;
+  position: absolute;
+  transform-origin: center;
+}
+
+.aurora-one {
+  animation: driftOne 12s ease-in-out infinite alternate;
+  background: rgba(251, 113, 133, 0.58);
+  height: 18rem;
+  left: -6rem;
+  top: 8rem;
+  width: 18rem;
+}
+
+.aurora-two {
+  animation: driftTwo 15s ease-in-out infinite alternate;
+  background: rgba(52, 211, 153, 0.38);
+  height: 22rem;
+  right: -7rem;
+  top: 22rem;
+  width: 22rem;
+}
+
+.aurora-three {
+  animation: pulseGlow 8s ease-in-out infinite;
+  background: rgba(250, 204, 21, 0.3);
+  bottom: 0;
+  height: 16rem;
+  left: 35%;
+  width: 16rem;
+}
+
+.star-field {
+  inset: 0;
+  position: absolute;
+}
+
+.star-field span {
+  animation: twinkle 2.8s ease-in-out infinite;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  height: 0.18rem;
+  position: absolute;
+  width: 0.18rem;
+}
+
+.star-field span:nth-child(3n) {
+  height: 0.28rem;
+  width: 0.28rem;
+}
+
+.confetti-field {
+  inset: 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 5;
+}
+
+.confetti-field i {
+  animation: confettiFall linear infinite;
+  border-radius: 2px;
+  height: 0.72rem;
+  opacity: 0.9;
+  position: absolute;
+  top: -2rem;
+  width: 0.34rem;
+}
+
+.fireworks {
+  inset: 0;
+  position: absolute;
+}
+
+.fireworks span {
+  animation: firework 3.4s ease-out infinite;
+  background:
+    radial-gradient(circle, var(--gold) 0 12%, transparent 13%),
+    radial-gradient(circle, var(--rose) 0 12%, transparent 13%),
+    radial-gradient(circle, var(--sky) 0 12%, transparent 13%),
+    radial-gradient(circle, var(--mint) 0 12%, transparent 13%);
+  background-position: 50% 0, 100% 50%, 50% 100%, 0 50%;
+  background-repeat: no-repeat;
+  background-size: 0.55rem 0.55rem;
+  height: 7rem;
+  opacity: 0;
+  position: absolute;
+  width: 7rem;
+}
+
+.fireworks span:nth-child(1) { left: 7%; top: 12%; }
+.fireworks span:nth-child(2) { animation-delay: 0.7s; left: 72%; top: 14%; }
+.fireworks span:nth-child(3) { animation-delay: 1.2s; left: 50%; top: 9%; }
+.fireworks span:nth-child(4) { animation-delay: 1.7s; left: 83%; top: 42%; }
+.fireworks span:nth-child(5) { animation-delay: 2.2s; left: 15%; top: 50%; }
+.fireworks span:nth-child(6) { animation-delay: 2.8s; left: 61%; top: 64%; }
+.fireworks span:nth-child(7) { animation-delay: 3.1s; left: 31%; top: 27%; }
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 4vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 34rem);
+  min-height: 100dvh;
+  padding: clamp(2rem, 6vw, 5.5rem);
+  position: relative;
+  z-index: 10;
+}
+
+.hero-copy {
+  max-width: 47rem;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 8vw, 7.6rem);
+  letter-spacing: 0;
+  line-height: 0.92;
+  margin: 0;
+  max-width: 12ch;
+  text-shadow: 0 0 28px rgba(255, 255, 255, 0.24);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.7;
+  margin: 1.6rem 0 0;
+  max-width: 42rem;
+}
+
+.hero-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-button,
+.date-pill {
+  align-items: center;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  display: inline-flex;
+  min-height: 3.25rem;
+  padding: 0 1.3rem;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  box-shadow: 0 18px 45px rgba(244, 63, 94, 0.34);
+  color: #1f1024;
+  cursor: pointer;
+  font-weight: 900;
+  gap: 0.75rem;
+}
+
+.primary-button:hover {
+  animation: buttonPulse 0.9s ease-in-out infinite;
+}
+
+.play-icon {
+  display: inline-grid;
+  font-size: 0.85rem;
+  min-width: 1rem;
+  place-items: center;
+}
+
+.date-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.portrait-stage {
+  min-height: clamp(31rem, 48vw, 44rem);
+  position: relative;
+}
+
+.halo-ring {
+  animation: haloSpin 18s linear infinite;
+  border: 2px dashed rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  inset: 1rem;
+  position: absolute;
+}
+
+.halo-ring::before,
+.halo-ring::after {
+  background: var(--gold);
+  border-radius: 999px;
+  box-shadow: 0 0 22px var(--gold);
+  content: "";
+  height: 0.9rem;
+  position: absolute;
+  width: 0.9rem;
+}
+
+.halo-ring::before {
+  left: 50%;
+  top: -0.45rem;
+}
+
+.halo-ring::after {
+  bottom: -0.45rem;
+  right: 50%;
+}
+
+.photo-stack {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.photo-card {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 1.6rem;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  inset: 8% 3% 15%;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  transform: translateY(2rem) rotate(-4deg) scale(0.9);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.photo-card.is-active {
+  animation: activeFloat 4s ease-in-out infinite;
+  opacity: 1;
+  transform: translateY(0) rotate(1deg) scale(1);
+  z-index: 2;
+}
+
+.photo-card.is-next {
+  opacity: 0.35;
+  transform: translate(1.6rem, 1.6rem) rotate(7deg) scale(0.92);
+}
+
+.photo-card img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photo-card figcaption {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.68));
+  bottom: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  left: 0;
+  padding: 4rem 1.4rem 1.25rem;
+  position: absolute;
+  right: 0;
+}
+
+.gallery-controls {
+  align-items: center;
+  bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 4;
+}
+
+.gallery-controls > button {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1;
+  width: 3rem;
+}
+
+.dots {
+  align-items: center;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.dots button {
+  background: rgba(255, 255, 255, 0.42);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+
+.dots button.is-active {
+  background: var(--gold);
+  box-shadow: 0 0 18px var(--gold);
+  width: 1.9rem;
+}
+
+.message-band {
+  min-height: 25rem;
+  padding: 2rem clamp(1.25rem, 6vw, 5.5rem) 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.message-panel {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 1.5rem;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.24);
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  text-align: left;
+}
+
+.graduate-name {
+  color: var(--gold);
+  display: block;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.message-panel p {
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  line-height: 1.65;
+  margin: 0;
+  text-align: left;
+}
+
+.message-panel strong {
+  color: var(--mint);
+  display: block;
+  margin-top: 1.2rem;
+}
+
+.floating-wishes {
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.floating-wishes span {
+  animation: floatWish linear infinite;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  padding: 0.65rem 1rem;
+  position: absolute;
+  top: 100%;
+  white-space: nowrap;
+}
+
+.memory-stream {
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 5.5rem) 0;
+  position: relative;
+  z-index: 10;
+}
+
+.memory-stream::before,
+.memory-stream::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(3rem, 9vw, 9rem);
+  z-index: 4;
+}
+
+.memory-stream::before {
+  background: linear-gradient(90deg, var(--bg-deep), transparent);
+  left: 0;
+}
+
+.memory-stream::after {
+  background: linear-gradient(270deg, var(--bg), transparent);
+  right: 0;
+}
+
+.stream-heading {
+  margin: 0 auto clamp(2rem, 5vw, 4rem);
+  max-width: 54rem;
+  padding: 0 clamp(1.25rem, 6vw, 5.5rem);
+  text-align: center;
+}
+
+.stream-heading h2 {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.stream-heading span {
+  color: var(--muted);
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.stream-lanes {
+  display: grid;
+  gap: clamp(1rem, 2.6vw, 2rem);
+}
+
+.stream-lane {
+  overflow: hidden;
+  transform: rotate(-1deg);
+  width: 100%;
+}
+
+.stream-lane.reverse {
+  transform: rotate(1deg);
+}
+
+.stream-track {
+  align-items: center;
+  animation: streamSlide 38s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.stream-segment {
+  align-items: center;
+  display: flex;
+  gap: clamp(0.85rem, 2vw, 1.3rem);
+  padding-right: clamp(0.85rem, 2vw, 1.3rem);
+}
+
+.stream-lane.reverse .stream-track {
+  animation-direction: reverse;
+  animation-duration: 44s;
+}
+
+.stream-lane.slow .stream-track {
+  animation-duration: 52s;
+}
+
+.stream-lanes:hover .stream-track {
+  animation-play-state: paused;
+}
+
+.stream-photo {
+  animation: bobPhoto 6s ease-in-out infinite;
+  aspect-ratio: 4 / 5;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--stroke);
+  border-radius: 1.15rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  flex: 0 0 clamp(10rem, 20vw, 18rem);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.stream-photo.tall {
+  flex-basis: clamp(11rem, 18vw, 16rem);
+}
+
+.stream-photo.wide {
+  aspect-ratio: 5 / 4;
+  flex-basis: clamp(13rem, 25vw, 22rem);
+}
+
+.stream-photo:nth-child(3n) {
+  animation-delay: -1.4s;
+}
+
+.stream-photo:nth-child(4n) {
+  animation-delay: -2.5s;
+}
+
+.stream-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.stream-photo figcaption {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+  bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 900;
+  left: 0;
+  padding: 3.5rem 1rem 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.stream-wish {
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(250, 204, 21, 0.22), rgba(244, 63, 94, 0.16)),
+    rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex: 0 0 clamp(14rem, 28vw, 24rem);
+  min-height: clamp(5.6rem, 10vw, 8rem);
+  padding: 1rem clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.stream-wish span {
+  color: var(--ink);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.timeline-section {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0 clamp(1.25rem, 6vw, 5.5rem) 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.moment-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--stroke);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  padding: 1.4rem;
+  position: relative;
+}
+
+.moment-card::before {
+  background: linear-gradient(90deg, var(--rose), var(--gold), var(--mint), var(--sky));
+  content: "";
+  height: 0.28rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.moment-card span {
+  color: var(--gold);
+  font-size: 2.6rem;
+  font-weight: 950;
+}
+
+.moment-card h2 {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.moment-card p,
+.wish-wall p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.wish-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  padding: 0 clamp(1.25rem, 6vw, 5.5rem) 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.wish-wall p {
+  animation: shimmer 3.8s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 800;
+  padding: 0.8rem 1rem;
+}
+
+@keyframes driftOne {
+  to { transform: translate(8rem, 6rem) scale(1.18); }
+}
+
+@keyframes driftTwo {
+  to { transform: translate(-7rem, -5rem) scale(0.88); }
+}
+
+@keyframes pulseGlow {
+  50% { opacity: 0.35; transform: scale(1.35); }
+}
+
+@keyframes twinkle {
+  50% { opacity: 0.25; transform: scale(1.8); }
+}
+
+@keyframes confettiFall {
+  to { transform: translate3d(2.5rem, 110dvh, 0) rotate(720deg); }
+}
+
+@keyframes firework {
+  0% { opacity: 0; transform: scale(0.15); }
+  24% { opacity: 1; }
+  70% { opacity: 0; transform: scale(1.4); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+@keyframes buttonPulse {
+  50% { transform: translateY(-2px) scale(1.03); }
+}
+
+@keyframes haloSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes activeFloat {
+  50% { transform: translateY(-0.8rem) rotate(-1deg) scale(1.01); }
+}
+
+@keyframes floatWish {
+  to { transform: translateY(-34rem); }
+}
+
+@keyframes shimmer {
+  50% {
+    box-shadow: 0 0 22px rgba(250, 204, 21, 0.24);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes streamSlide {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes bobPhoto {
+  50% { transform: translateY(-0.65rem) rotate(1deg); }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+  }
+
+  h1 {
+    max-width: 11ch;
+  }
+
+  .portrait-stage {
+    min-height: 36rem;
+  }
+
+  .timeline-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    gap: 1rem;
+    padding: 2rem 1rem 1rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .date-pill {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .portrait-stage {
+    min-height: 31rem;
+  }
+
+  .photo-card {
+    inset: 8% 0 16%;
+  }
+
+  .message-band {
+    padding-top: 1rem;
+  }
+
+  .memory-stream {
+    padding: 2.5rem 0;
+  }
+
+  .stream-heading {
+    padding: 0 1rem;
+  }
+
+  .stream-photo {
+    flex-basis: 11rem;
+  }
+
+  .stream-photo.wide {
+    flex-basis: 14rem;
+  }
+
+  .stream-wish {
+    flex-basis: 16rem;
+    min-height: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

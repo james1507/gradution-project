@@ -1,0 +1,58 @@
+{
+  "loverName": "Gửi em thối của Anh,",
+  "eyebrow": "Graduation Day",
+  "headline": "Chúc mừng em đã tốt nghiệp đại học",
+  "subtitle": "Hôm nay là ngày của Lâm, người đã đi qua rất nhiều cố gắng để chạm đến cột mốc rực rỡ này.",
+  "dateLabel": "Mãi tự hào về em",
+  "primaryMessage": "Em dấu à, chúc mừng em đã tốt nghiệp đại học. Anh biết phía sau ngày hôm nay là rất nhiều đêm học bài, rất nhiều lần mệt mỏi, áp lực và cả những lúc em phải tự mạnh mẽ để đi tiếp. Anh thật sự tự hào vì em đã không bỏ cuộc, vì em đã từng bước biến ước mơ của mình thành hiện thực. Từ hôm nay, em bước gần hơn đến hành trình trở thành một bác sĩ trong tương lai, một người không chỉ có tri thức mà còn có trái tim ấm áp để chăm sóc và chữa lành cho người khác. Anh mong em luôn giữ được niềm tin, sự dịu dàng và bản lĩnh của mình. Dù con đường phía trước còn dài, anh Thối sẽ luôn là người thương của em, luôn đứng phía sau cổ vũ, yêu thương và tự hào về em thối dấu của anh.",
+  "signature": "Anh An thối thồi ",
+  "music": {
+    "src": "assets/music/graduation-song.mp3",
+    "title": "Bài nhạc của chúng mình"
+  },
+  "photos": [
+    {
+      "src": "assets/photos/photo-1.jpeg",
+      "caption": "Nụ cười ngày tốt nghiệp"
+    },
+    {
+      "src": "assets/photos/photo-2.jpg",
+      "caption": "Tất cả cố gắng đã nở hoa 🎆"
+    },
+    {
+      "src": "assets/photos/photo-3.jpg",
+      "caption": "Chương mới bắt đầu từ hôm nay"
+    },
+    {
+      "src": "assets/photos/photo-4.jpg",
+      "caption": "Khoảnh khắc đáng nhớ của em"
+    },
+    {
+      "src": "assets/photos/photo-5.jpg",
+      "caption": "Một ngày thật rực rỡ"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "01",
+      "title": "Những ngày cố gắng",
+      "text": "Có những ngày mệt, có những lần áp lực, nhưng em vẫn đi tiếp bằng sự bền bỉ rất đáng tự hào."
+    },
+    {
+      "year": "02",
+      "title": "Khoảnh khắc tỏa sáng",
+      "text": "Tấm bằng này không chỉ là kết quả, mà còn là bằng chứng cho bản lĩnh và trái tim của em."
+    },
+    {
+      "year": "03",
+      "title": "Tương lai của em",
+      "text": "Anh tin phía trước còn rất nhiều điều đẹp đang chờ em, và anh muốn được chứng kiến từng điều đó."
+    }
+  ],
+  "wishes": [
+    "🎆 Tự hào về Lâm rất nhiều 🎆",
+    "🎇 Cảm ơn em vì đã luôn cố gắng 🎇",
+    "✨ Chúc em trở thành một bác sĩ thật giỏi trong tương lai ✨",
+    "🎆 Anh thối luôn yêu nụ cười của em 🎆"
+  ]
+}
