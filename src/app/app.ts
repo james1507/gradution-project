@@ -162,12 +162,12 @@ export class App implements OnInit, OnDestroy {
   }
 
   protected marqueePhotos(row: number): GalleryPhoto[] {
-    const photos = this.config().photos;
+    const photos = this.config().photos.filter((_, index) => index % 3 === row);
     if (photos.length === 0) {
       return [];
     }
 
-    return Array.from({ length: photos.length * 5 }, (_, index) => photos[(index + row) % photos.length]);
+    return Array.from({ length: photos.length * 7 }, (_, index) => photos[index % photos.length]);
   }
 
   protected toggleMusic(audio: HTMLAudioElement): void {
