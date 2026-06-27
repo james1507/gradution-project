@@ -131,17 +131,21 @@ export class App implements OnInit, OnDestroy {
   }
 
   protected nextPhoto(): void {
-    const photoCount = this.config().photos.length;
+    const photoCount = this.featuredPhotos().length;
     this.activePhotoIndex.update((current) => (current + 1) % photoCount);
   }
 
   protected previousPhoto(): void {
-    const photoCount = this.config().photos.length;
+    const photoCount = this.featuredPhotos().length;
     this.activePhotoIndex.update((current) => (current - 1 + photoCount) % photoCount);
   }
 
   protected selectPhoto(index: number): void {
     this.activePhotoIndex.set(index);
+  }
+
+  protected featuredPhotos(): GalleryPhoto[] {
+    return this.config().photos.slice(0, 6);
   }
 
   protected useFallbackPhoto(photo: GalleryPhoto): void {

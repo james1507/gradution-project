@@ -499,7 +499,7 @@ h1 {
 
 .stream-track {
   align-items: center;
-  animation: streamSlide 38s linear infinite;
+  animation: streamSlide 78s linear infinite;
   display: flex;
   width: max-content;
 }
@@ -513,11 +513,11 @@ h1 {
 
 .stream-lane.reverse .stream-track {
   animation-direction: reverse;
-  animation-duration: 44s;
+  animation-duration: 92s;
 }
 
 .stream-lane.slow .stream-track {
-  animation-duration: 52s;
+  animation-duration: 108s;
 }
 
 .stream-lanes:hover .stream-track {

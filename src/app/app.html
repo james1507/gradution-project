@@ -53,11 +53,11 @@
     <div class="portrait-stage" aria-label="Bộ ảnh kỷ niệm">
       <div class="halo-ring"></div>
       <div class="photo-stack">
-        @for (photo of config().photos; track photo.src; let index = $index) {
+        @for (photo of featuredPhotos(); track photo.src; let index = $index) {
           <figure
             class="photo-card"
             [class.is-active]="index === activePhotoIndex()"
-            [class.is-next]="index === (activePhotoIndex() + 1) % config().photos.length"
+            [class.is-next]="index === (activePhotoIndex() + 1) % featuredPhotos().length"
           >
             <img [src]="photo.src" [alt]="photo.caption" (error)="useFallbackPhoto(photo)" />
             <figcaption>{{ photo.caption }}</figcaption>
@@ -68,7 +68,7 @@
       <div class="gallery-controls" aria-label="Điều khiển ảnh">
         <button type="button" (click)="previousPhoto()" aria-label="Ảnh trước">‹</button>
         <div class="dots" aria-label="Chọn ảnh">
-          @for (photo of config().photos; track photo.src; let index = $index) {
+          @for (photo of featuredPhotos(); track photo.src; let index = $index) {
             <button
               type="button"
               [class.is-active]="index === activePhotoIndex()"
