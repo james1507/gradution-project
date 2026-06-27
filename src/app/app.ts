@@ -167,7 +167,7 @@ export class App implements OnInit, OnDestroy {
       return [];
     }
 
-    return Array.from({ length: photos.length * 7 }, (_, index) => photos[index % photos.length]);
+    return Array.from({ length: photos.length * 3 }, (_, index) => photos[index % photos.length]);
   }
 
   protected toggleMusic(audio: HTMLAudioElement): void {

@@ -452,6 +452,9 @@ h1 {
 }
 
 .memory-stream {
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 54rem;
   overflow: hidden;
   padding: clamp(2rem, 6vw, 5.5rem) 0;
   position: relative;
@@ -533,6 +536,8 @@ h1 {
   align-items: center;
   animation: streamSlide 78s linear infinite;
   display: flex;
+  transform: translate3d(var(--stream-offset), 0, 0);
+  will-change: transform;
   width: max-content;
 }
 
@@ -746,8 +751,8 @@ h1 {
 }
 
 @keyframes streamSlide {
-  from { transform: translateX(var(--stream-offset)); }
-  to { transform: translateX(calc(-50% + var(--stream-offset))); }
+  from { transform: translate3d(var(--stream-offset), 0, 0); }
+  to { transform: translate3d(calc(-50% + var(--stream-offset)), 0, 0); }
 }
 
 @keyframes bobPhoto {
@@ -775,6 +780,11 @@ h1 {
 }
 
 @media (max-width: 620px) {
+  .confetti-field,
+  .fireworks {
+    display: none;
+  }
+
   .hero {
     gap: 1.4rem;
     min-height: auto;
@@ -888,6 +898,8 @@ h1 {
   }
 
   .stream-photo {
+    animation: none;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
     flex-basis: 11rem;
   }
 

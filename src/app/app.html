@@ -119,7 +119,13 @@
               <div class="stream-segment">
                 @for (photo of marqueePhotos(row); track $index; let index = $index) {
                   <figure class="stream-photo" [class.tall]="index % 4 === 1" [class.wide]="index % 5 === 2">
-                    <img [src]="photo.src" [alt]="photo.caption" (error)="useFallbackPhoto(photo)" />
+                    <img
+                      [src]="photo.src"
+                      [alt]="photo.caption"
+                      loading="lazy"
+                      decoding="async"
+                      (error)="useFallbackPhoto(photo)"
+                    />
                     <figcaption>{{ photo.caption }}</figcaption>
                   </figure>
 
